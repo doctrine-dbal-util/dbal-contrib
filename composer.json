@@ -1,0 +1,32 @@
+{
+    "name": "dbal-util/dbal-contrib",
+    "type": "library",
+    "description": "Database Abstraction Layer Contrib: Sqlite SessionInit",
+    "keywords": ["dbal", "database", "persistence", "sqlite", "sessioninit", "foreign_keys", "snowyowl"],
+    "homepage": "https://github.com/dbal-util/dbal-contrib",
+    "license": "MIT",
+    "authors": [
+        {"name": "Jean-Bernard Addor"},
+        {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"}
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "doctrine/common": ">=2.4,<2.8-dev",
+        "doctrine/dbal": "^2.0"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-0": { "DbalUtil\\DbalContrib\\": "lib/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.5.12.x-dev"
+        }
+    },
+    "archive": {
+        "exclude": ["!vendor", "tests", "*phpunit.xml", ".travis.yml", "build.xml", "build.properties", "composer.phar"]
+    }
+}
