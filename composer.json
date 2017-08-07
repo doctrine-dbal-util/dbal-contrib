@@ -1,5 +1,5 @@
 {
-    "name": "dbal-util/dbal-contrib",
+    "name": "doctrine-dbal-util/dbal-contrib",
     "type": "library",
     "description": "Database Abstraction Layer Contrib: Sqlite SessionInit",
     "keywords": ["dbal", "database", "persistence", "sqlite", "sessioninit", "foreign_keys", "snowyowl"],
