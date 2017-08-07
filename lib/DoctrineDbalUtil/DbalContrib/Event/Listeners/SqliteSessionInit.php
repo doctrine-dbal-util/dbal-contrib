@@ -16,7 +16,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace DbalUtil\DbalContrib\Event\Listeners;
+namespace DoctrineDbalUtil\DbalContrib\Event\Listeners;
 
 use Doctrine\DBAL\Event\ConnectionEventArgs;
 use Doctrine\DBAL\Events;
