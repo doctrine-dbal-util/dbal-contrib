@@ -1,0 +1,2 @@
+[Symfony\Component\Filesystem\Exception\IOException]                         
+Failed to write file "/home/travis/build/doctrine-dbal-util/dbal-contrib/var/.php_cs.cache", "no reason available".
