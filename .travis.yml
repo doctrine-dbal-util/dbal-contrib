@@ -23,11 +23,7 @@ matrix:
     - php: nightly
 
 before_install:
-  - if [ -f /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini ]; then echo 'Found!'; fi
   - if [ -f /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini ]; then phpenv config-rm xdebug.ini; fi
-  # - ls /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini
-  # - find /home/travis/.phpenv/versions -name xdebug.ini
-  # - phpenv config-rm xdebug.ini
   - composer self-update # May help using cache for php packages.
   # - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   # - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
@@ -37,6 +33,7 @@ before_install:
 
 install:
   - composer validate
+  - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then composer require --dev friendsofphp/php-cs-fixer; fi
   # - composer install --no-scripts --no-progress --no-suggest
   # - cp config/parameters.yml.travis config/parameters.yml
   # - composer up --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
@@ -48,7 +45,7 @@ before_script:
 script:
   # - ./vendor/bin/simple-phpunit
   # this checks that the source code follows the Symfony Code Syntax rules
-  - ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
+  - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then ./vendor/bin/php-cs-fixer fix --diff --dry-run -v; fi
   # this checks that the YAML config files contain no syntax errors
   # - ./bin/console lint:yaml config
   # - ./bin/console lint:yaml @CodeExplorerBundle
