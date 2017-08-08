@@ -14,11 +14,14 @@ services:
 matrix:
   fast_finish: true
   include:
-    - php: 5.4
-    - php: 5.5
+    # - php: 5.3
+    # - php: 5.4
+    # - php: 5.5
     - php: 5.6
-    - php: 7.0
-    - php: 7.1
+    # - php: 7.0
+    # - php: 7.1
+    # - php: 7.2
+    # - php: nightly
 
 before_install:
   - phpenv config-rm xdebug.ini
@@ -53,4 +56,6 @@ script:
   # this checks that the application doesn't use dependencies with known security vulnerabilities
   # - ./bin/console security:check --end-point=http://security.sensiolabs.org/check_lock
 
-# inspirated from symfony/symfony-demo
+# inspirated from 
+  # symfony/symfony-demo
+  # TODO: https://github.com/doctrine/dbal/blob/v2.5.13/.travis.yml
