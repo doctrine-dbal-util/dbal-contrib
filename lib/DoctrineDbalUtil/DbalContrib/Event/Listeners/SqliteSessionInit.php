@@ -59,4 +59,3 @@ class SqliteSessionInit implements EventSubscriber
         return [Events::postConnect];
     }
 }
-
