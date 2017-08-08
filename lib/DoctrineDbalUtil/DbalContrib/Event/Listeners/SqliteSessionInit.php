@@ -15,7 +15,7 @@
  *
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license. For more information, see
-<http://www.doctrine-project.org>.
+ * <http://www.doctrine-project.org>.
  */
 
 namespace DoctrineDbalUtil\DbalContrib\Event\Listeners;
@@ -32,6 +32,7 @@ use Doctrine\DBAL\Events;
  * http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/events.html
  * https://symfony.com/doc/current/bundles/DoctrineBundle/configuration.html#configuration-overview
  * https://symfony.com/doc/current/service_container/tags.html#adding-additional-attributes-on-tags
+ * between others (keep this line for the dot).
  *
  * @author Jean-Bernard Addor
  * @author Benjamin Eberlei <kontakt@beberlei.de>
