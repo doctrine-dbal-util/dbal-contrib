@@ -30,6 +30,7 @@ use Doctrine\DBAL\Events;
  * http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/events.html
  * https://symfony.com/doc/current/bundles/DoctrineBundle/configuration.html#configuration-overview
  * https://symfony.com/doc/current/service_container/tags.html#adding-additional-attributes-on-tags
+ * .
  * @author Jean-Bernard Addor
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
