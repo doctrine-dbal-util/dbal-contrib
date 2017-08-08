@@ -1,4 +1,5 @@
 <?php
+
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -13,7 +14,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license.
+ * and is licensed under the MIT license. For more information, see
+<http://www.doctrine-project.org>.
  */
 
 namespace DoctrineDbalUtil\DbalContrib\Event\Listeners;
@@ -30,7 +32,7 @@ use Doctrine\DBAL\Events;
  * http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/events.html
  * https://symfony.com/doc/current/bundles/DoctrineBundle/configuration.html#configuration-overview
  * https://symfony.com/doc/current/service_container/tags.html#adding-additional-attributes-on-tags
- * .
+ *
  * @author Jean-Bernard Addor
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
@@ -42,7 +44,7 @@ class SqliteSessionInit implements EventSubscriber
     public function postConnect(ConnectionEventArgs $args)
     {
         $dbal = $args->getConnection();
-        if ($dbal->getDatabasePlatform()->getName() == 'sqlite'):
+        if ($dbal->getDatabasePlatform()->getName() === 'sqlite'):
             $dbal->exec('PRAGMA foreign_keys = ON;'); // https://github.com/doctrine/dbal/issues/2531 // should be in an event
         endif;
         // echo $dbal->getDatabasePlatform()->getName();
