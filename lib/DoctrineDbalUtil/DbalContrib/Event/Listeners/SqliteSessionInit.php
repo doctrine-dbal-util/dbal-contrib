@@ -18,9 +18,9 @@
 
 namespace DoctrineDbalUtil\DbalContrib\Event\Listeners;
 
+use Doctrine\Common\EventSubscriber;
 use Doctrine\DBAL\Event\ConnectionEventArgs;
 use Doctrine\DBAL\Events;
-use Doctrine\Common\EventSubscriber;
 
 /**
  * To be able to use Foreign Keys with sqlite
@@ -37,14 +37,12 @@ class SqliteSessionInit implements EventSubscriber
 {
     /**
      * @param \Doctrine\DBAL\Event\ConnectionEventArgs $args
-     *
-     * @return void
      */
     public function postConnect(ConnectionEventArgs $args)
     {
         $dbal = $args->getConnection();
         if ($dbal->getDatabasePlatform()->getName() == 'sqlite'):
-            $dbal->exec("PRAGMA foreign_keys = ON;"); // https://github.com/doctrine/dbal/issues/2531 // should be in an event
+            $dbal->exec('PRAGMA foreign_keys = ON;'); // https://github.com/doctrine/dbal/issues/2531 // should be in an event
         endif;
         // echo $dbal->getDatabasePlatform()->getName();
     }
@@ -54,7 +52,7 @@ class SqliteSessionInit implements EventSubscriber
      */
     public function getSubscribedEvents()
     {
-        return array(Events::postConnect);
+        return [Events::postConnect];
     }
 }
 
