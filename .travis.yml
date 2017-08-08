@@ -23,7 +23,7 @@ matrix:
     - php: nightly
 
 before_install:
-  - find . -name xdebug.ini
+  - find /home/travis/.phpenv/versions -name xdebug.ini
   - phpenv config-rm xdebug.ini
   - composer self-update # May help using cache for php packages.
   # - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
