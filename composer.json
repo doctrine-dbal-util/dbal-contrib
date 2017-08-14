@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Database Abstraction Layer Contrib: Sqlite SessionInit",
     "keywords": ["dbal", "database", "persistence", "sqlite", "sessioninit", "foreign_keys", "snowyowl"],
-    "homepage": "https://github.com/dbal-util/dbal-contrib",
+    "homepage": "https://github.com/doctrine-dbal-util/dbal-contrib",
     "license": "MIT",
     "authors": [
         {"name": "Jean-Bernard Addor"},
@@ -18,7 +18,7 @@
     "suggest": {
     },
     "autoload": {
-        "psr-0": { "DbalUtil\\DbalContrib\\": "lib/" }
+        "psr-0": { "DoctrineDbalUtil\\DbalContrib\\": "lib/" }
     },
     "extra": {
         "branch-alias": {
