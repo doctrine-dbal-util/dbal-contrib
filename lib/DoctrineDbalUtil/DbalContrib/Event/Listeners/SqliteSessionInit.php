@@ -45,7 +45,7 @@ class SqliteSessionInit implements EventSubscriber
     public function postConnect(ConnectionEventArgs $args)
     {
         $dbal = $args->getConnection();
-        if ($dbal->getDatabasePlatform()->getName() === 'sqlite'):
+        if ('sqlite' === $dbal->getDatabasePlatform()->getName()):
             $dbal->exec('PRAGMA foreign_keys = ON;'); // https://github.com/doctrine/dbal/issues/2531 // should be in an event
         endif;
         // echo $dbal->getDatabasePlatform()->getName();
